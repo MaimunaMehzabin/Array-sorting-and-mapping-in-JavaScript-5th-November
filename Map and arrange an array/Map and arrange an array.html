@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+      body {
+        text-align: center;
+        background-color: lightcyan;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2>Ascending and Descending for mapped numbers</h2>
+      </div>
+    </div>
+    <p id="product_value"></p>
+    <button onclick="ascending()">Ascending order</button>
+    <button onclick="descending()">Descending order</button>
+
+    <script>
+      var numbers = [83, 75, 92, 51, 49, 98, 60];
+
+      function myFunction(num) {
+        return num * 50;
+      }
+
+      var newarray = numbers.map(myFunction);
+      document.getElementById("product_value").innerHTML =
+        "The mapped values are:" + newarray;
+
+      function ascending() {
+        newarray.sort(function (a, b) {
+          return a - b;
+        });
+        document.getElementById("product_value").innerHTML =
+          "The mapped values in ascending order are:" + newarray;
+      }
+
+      function descending() {
+        newarray.sort(function (a, b) {
+          return b - a;
+        });
+        document.getElementById("product_value").innerHTML =
+          "The mapped values in descending order are:" + newarray;
+      }
+    </script>
+  </body>
+</html>
